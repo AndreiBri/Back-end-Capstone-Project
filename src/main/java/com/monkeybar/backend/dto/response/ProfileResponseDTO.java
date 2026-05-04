@@ -1,0 +1,15 @@
+package com.monkeybar.backend.dto.response;
+
+import com.monkeybar.backend.enums.Role;
+import lombok.Data;
+
+import java.util.UUID;
+
+@Data
+public class ProfileResponseDTO {
+    private UUID id;
+    private String email;
+    private Role role;
+    private UUID venueId;
+    private String venueName;
+}
