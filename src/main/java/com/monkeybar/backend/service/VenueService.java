@@ -41,4 +41,9 @@ public class VenueService {
         venue.setSlug(dto.getSlug());
         return EntityMapper.toVenueResponse(venueRepository.save(venue));
     }
+
+    public Venue getEntityBySlug(String slug) {
+        return venueRepository.findBySlug(slug)
+                .orElseThrow(() -> new RuntimeException("Venue non trovata: " + slug));
+    }
 }
